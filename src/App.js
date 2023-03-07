@@ -7,13 +7,14 @@ const App = () => {
   const [playerOne, setPlayerOne] = useState(true);
   const handleGamePlay = (index) => {
     let updatedSquares = [...squares];
-    if (playerOne) {
+    if (playerOne && updatedSquares[index]=== null) {
       updatedSquares[index] = "𝚇";
-    } else {
+    } else if (!playerOne && updatedSquares[index]=== null){
       updatedSquares[index] = "🅾️";
     }
     setSquares(updatedSquares);
     setPlayerOne(!playerOne);
+  
   };
   return (
     <>
@@ -35,3 +36,4 @@ const App = () => {
 };
 
 export default App;
+

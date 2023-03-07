@@ -24,12 +24,19 @@ When creating a project it is important to think about organization of your code
 
 - ✅As a user, my partner can click on a square after me and see their mark.
 
-  branch partner-click
+  ✅ branch partner-click
   -create a state for playerOne and set it to true
   -within our handleGamePlay function, create an if conditional that if playerOne is true place an x and else place an o.
   -then set the updatedSquares and swap the state of player one by using setPlayerOne(!playerOne) within our function
 
 - As a user, I can't click on a square that has already been marked.
+
+✅- branch cant-click
+- if user clicks on an already used box value won't change.
+- create a system that stop user from changing already used square. 
+= We were able to add logic to our handleGamePlay that only allowed the symbol to  be input if the box was empty. 
+
+
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.
 - As a user, I can't continue playing the game after the game has been won.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
