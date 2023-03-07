@@ -32,12 +32,18 @@ When creating a project it is important to think about organization of your code
 - As a user, I can't click on a square that has already been marked.
 
 ✅- branch cant-click
-- if user clicks on an already used box value won't change.
-- create a system that stop user from changing already used square. 
-= We were able to add logic to our handleGamePlay that only allowed the symbol to  be input if the box was empty. 
 
+- if user clicks on an already used box value won't change.
+- create a system that stop user from changing already used square.
+  = We were able to add logic to our handleGamePlay that only allowed the symbol to be input if the box was empty.
 
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.
+
+  branch win-notice
+  -add function that has a variable within that defines what every possible win condition is
+  -after that win condition is met, alert the user in our handleGamePlay function
+  -define a variable that holds the win condition
+
 - As a user, I can't continue playing the game after the game has been won.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
 - As a user, I can click on a restart button that will clear the game board.
