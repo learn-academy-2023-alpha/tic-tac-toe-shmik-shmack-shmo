@@ -7,6 +7,14 @@ When creating a project it is important to think about organization of your code
 ### 📚 User Stories
 
 - As a user, I can see a three by three grid game board on the page.
+
+  branch starting-grid
+  -map over squares to produce nine boxes
+  -wrap those boxes in a div
+  -change the div in css to use flex and wrap those boxes
+  -adjust size of boxes and div to fit page
+  -center content on page
+
 - As a user, I can click on a square to mark it.
 - As a user, my partner can click on a square after me and see their mark.
 - As a user, I can't click on a square that has already been marked.
