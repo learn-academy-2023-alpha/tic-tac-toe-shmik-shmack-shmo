@@ -5,6 +5,8 @@ import "./App.css";
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [playerOne, setPlayerOne] = useState(true);
+  const [playable, setPlayable] = useState(true);
+  const [currentPlayer, setCurrentPlayer] = useState("Player 𝚇's Turn");
   const calculateWinner = (squares) => {
     const lines = [
       [0, 1, 2],
@@ -30,22 +32,29 @@ const App = () => {
   };
   const handleGamePlay = (index) => {
     let updatedSquares = [...squares];
-    if (playerOne && updatedSquares[index] === null) {
+    if (playerOne && updatedSquares[index] === null && playable) {
       updatedSquares[index] = "𝚇";
-    } else if (!playerOne && updatedSquares[index] === null) {
+      setCurrentPlayer("Player 🅾️'s Turn");
+    } else if (!playerOne && updatedSquares[index] === null && playable) {
       updatedSquares[index] = "🅾️";
+      setCurrentPlayer("Player 𝚇️'s Turn");
+    } else if (updatedSquares.every(true)) {
+      setPlayable(false);
+      setCurrentPlayer("The Game Ends In a Draw!");
     }
     setSquares(updatedSquares);
     setPlayerOne(!playerOne);
     let winner = calculateWinner(updatedSquares);
     if (winner) {
-      alert(`${winner} is the winner!`);
+      setPlayable(false);
+      setCurrentPlayer(`${winner} is the winner!`);
     }
   };
 
   return (
     <>
       <h1 className="header">Shmik Shmack Shmo</h1>
+      <p className="currentplayer">{currentPlayer}</p>
       <div className="gameboard">
         {squares.map((value, index) => {
           return (
